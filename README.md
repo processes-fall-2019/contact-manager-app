@@ -4,7 +4,11 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
+# install dependencies in root directory
+npm install
+
+# change to 'server' directory and install server dependencies
+cd server
 npm install
 
 # open server at localhost:8081
