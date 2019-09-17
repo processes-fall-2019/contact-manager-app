@@ -57,5 +57,5 @@ app.post('/register', async (req, res) => {
 })
 
 app.listen(process.env.PORT || 8081)
-console.log(`Server started on port: 8081`)
+console.log(`Serveer started on port: 8081`)
 console.log('In another terminal window, but in the same directory, run npm run dev to launch app.');
