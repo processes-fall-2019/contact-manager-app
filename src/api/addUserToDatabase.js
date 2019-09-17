@@ -3,19 +3,19 @@
 var knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+    host: '127.0.0.1',
     port: '5437',
-    user : 'postgres',
-    password : '',
-    database : 'contact-manager-database'
+    user: 'postgres',
+    password: '',
+    database: 'contact-manager-database'
   }
 })
 
 let name = 'Francisco Franco'
-let email = 'fhfranco32@gmail.com'  // change to get from front end when user inputs email, from json?
+let email = 'fhfranco32@gmail.com' // change to get from front end when user inputs email, from json?
 let password = 'hello' // encode and change
 
-function addUser() {
+function addUser () {
   return knex('users').insert({
     name: name,
     email: email,

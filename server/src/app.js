@@ -1,4 +1,4 @@
-console.log("hello")
+console.log('hello')
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -12,7 +12,7 @@ app.use(cors())
 
 app.get('/status', (req, res) => {
   res.send({
-    message: "hello world!"
+    message: 'hello world!'
   })
 })
 

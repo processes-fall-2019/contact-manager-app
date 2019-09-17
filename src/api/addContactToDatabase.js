@@ -3,25 +3,25 @@
 var knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+    host: '127.0.0.1',
     port: '5437',
-    user : 'postgres',
-    password : '',
-    database : 'contact-manager-database'
+    user: 'postgres',
+    password: '',
+    database: 'contact-manager-database'
   }
 })
 
-let first_name = 'Francisco'
-let last_name = 'Franco'
-let email = 'test@gmail.com'  // change to get from front end when user inputs email, from json?
-let phone_number = '123-456-7890' // encode and change
+let firstName = 'Francisco'
+let lastName = 'Franco'
+let email = 'test@gmail.com' // change to get from front end when user inputs email, from json?
+let phoneNumber = '123-456-7890' // encode and change
 
-function addContact() {
+function addContact () {
   return knex('contacts').insert({
-    first_name: first_name,
-    last_name: last_name,
+    first_name: firstName,
+    last_name: lastName,
     email: email,
-    phone_number: phone_number
+    phone_number: phoneNumber
   }).then().finally(function () {
     knex.destroy()
   })
