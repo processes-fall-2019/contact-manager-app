@@ -6,12 +6,20 @@
       <input type="password" name="password" v-model="password" placeholder="password"/>
 
       <br>
-      <button @click="register"> Register </button>
+      <router-link :to="{name: 'HelloWorld'}">
+        <button @click="register"> Register </button>
+      </router-link>
+
+      <router-link :to="{name: 'HelloWorld'}">
+        <button> Cancel </button>
+      </router-link>
+
   </div>
 </template>
 
 <script>
 import AuthenticationService from '../services/AuthenticationService'
+// import addUser from '../api/addUserToDatabase'
 
 export default {
   data () {
