@@ -11,7 +11,7 @@ npm install
 cd server
 npm install
 
-# open server at localhost:8081
+# launch a server at localhost:8081
 npm run start
 
 # open new terminal window (making sure its in the same directory) and
