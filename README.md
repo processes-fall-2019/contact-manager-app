@@ -7,15 +7,12 @@
 # install dependencies in root directory
 npm install
 
-# change to 'server' directory and install server dependencies
+# change to 'server' directory, install server dependencies,
+# and switch back to root directory
 cd server
 npm install
+cd ../
 
-# launch a server at localhost:8081
+# launch app
 npm run start
-
-# open new terminal window (making sure its in the same directory) and
-# serve with hot reload at localhost:8080
-npm run dev
-
 ```
