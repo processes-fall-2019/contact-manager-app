@@ -21,22 +21,11 @@ var knex = require('knex')({
   }
 })
 
-// app.get('/status', (req, res) => {
-//   res.send({
-//     message: 'hello world!'
-//   })
-// })
-
-// app.post('/register', (req, res) => {
-//   res.send({
-//     message: `Hello ${req.body.email}, your user was registered!`
-//   })
-// })
-
+// we use this to get all contacts that belong to a certain user (based on user_id)
 // GET request that retrives all contacts from database
 // TODO: implement retrieving based on a specific user_id
 app.get('/contacts', (req, res) => {
-  knex.select().from('contacts').then(function (contact) {
+  knex.select().from('contacts').where({ user_id: 2 }).then(function (contact) {
     res.send(contact)
   })
 })
@@ -58,4 +47,4 @@ app.post('/register', async (req, res) => {
 
 app.listen(process.env.PORT || 8081)
 console.log(`Serveer started on port: 8081`)
-console.log('In another terminal window, but in the same directory, run npm run dev to launch app.');
+console.log('In another terminal window, but in the same directory, run npm run dev to launch app.')
