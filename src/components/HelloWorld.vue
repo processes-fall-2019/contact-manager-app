@@ -1,10 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 v-if="enabled">{{ msg }}</h1>
 
-    <button> Login </button>
+    <br>
+    <br>
+
+    <router-link :to="{name: 'login'}">
+      <button v-if="enabled"> Login </button>
+    </router-link>
+
     <router-link :to="{name: 'register'}">
-      <button> Register </button>
+      <button v-if="enabled"> Register </button>
     </router-link>
 
   </div>
@@ -15,7 +21,17 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Easy-Contacts'
+      msg: 'Welcome to Easy-Contacts',
+      enabled: true,
+      error: null
+    }
+  },
+  methods: {
+    handleSignUpButton () {
+      this.enabled = false
+    },
+    handleBackButton () {
+      this.enabled = true
     }
   }
 }
