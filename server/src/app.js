@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
+const config = require('./config/config')
+// const addUser = require('../../src/api/addUser.js')
 
 app.use(morgan('combined'))
 app.use(bodyParser.json())
@@ -30,21 +32,22 @@ app.get('/contacts', (req, res) => {
   })
 })
 
+require('./routes')(app, knex)
 // POST request that adds a user to the database everytime the
 // register button is pressed
-app.post('/register', async (req, res) => {
-  await knex('users').insert({
-    name: 'test',
-    email: req.body.email,
-    password: req.body.password
-  }).then(function (user) {
-    // res.send(user)
-    res.send({
-      message: `Hello ${req.body.email}, your user was registered!`
-    })
-  })
-})
+// app.post('/register', async (req, res) => {
+//   await knex('users').insert({
+//     name: 'test',
+//     email: req.body.email,
+//     password: req.body.password
+//   }).then(function (user) {
+//     // res.send(user)
+//     res.send({
+//       message: `Hello ${req.body.email}, your user was registered!`
+//     })
+//   })
+// })
 
-app.listen(process.env.PORT || 8081)
-console.log(`Serveer started on port: 8081`)
-console.log('In another terminal window, but in the same directory, run npm run dev to launch app.')
+// app.listen(process.env.PORT || 8081)
+app.listen(config.port)
+console.log(`Server started on port: 8081`)
