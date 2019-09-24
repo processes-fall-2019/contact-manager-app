@@ -26,6 +26,8 @@
     "pg-promise": "^9.1.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vuex": "^3.1.1",
+    "vuex-router-sync": "^5.0.0",
     "webpack-dev-server": "^2.11.5"
   },
   "devDependencies": {
@@ -83,7 +85,6 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.11.5",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
