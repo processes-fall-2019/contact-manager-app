@@ -1,19 +1,25 @@
 <template>
-  <div class="hello">
-    <h1 v-if="enabled">{{ msg }}</h1>
 
-    <br>
+<div class = "container">
+  <body>
+  <div class="hello">
+    <br><br><br><br><br>
+    <h1 v-if="enabled">{{ msg }}</h1>
+    <h2> We got the easiest contacts in town, <small><i><u>guaranteed</u></i></small> </h2>
     <br>
 
     <router-link :to="{name: 'login'}">
-      <button v-if="enabled"> Login </button>
+      <button v-if="enabled" class = "buttons"> Login </button>
     </router-link>
-
+    
     <router-link :to="{name: 'register'}">
-      <button v-if="enabled"> Register </button>
+      <button v-if="enabled" class = "buttons"> Register </button>
     </router-link>
-
   </div>
+  <br><br><br><br><br>
+  </body>
+</div>
+  
 </template>
 
 <script>
@@ -39,8 +45,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+.container {
+height: 100%;
+width: 70%;
+margin: auto;
+background-image: url('~@/assets/green-triangle-3.png');
+border-radius: 30%;
+}
+.buttons{
+font-weight: normal;
+  background-color:Green;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+h1 {
   font-weight: normal;
+  font-size: 60px;
+  color: black;
+}
+h2{
+  color:black;
 }
 ul {
   list-style-type: none;
