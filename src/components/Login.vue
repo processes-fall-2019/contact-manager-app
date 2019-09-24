@@ -1,20 +1,12 @@
 <template>
   <div>
       <h1> Login </h1>
-
       <input type="email" name="email" v-model="email" placeholder="email"/>
       <input type="password" name="password" v-model="password" placeholder="password"/>
-
       <br>
-
       <div class="error" v-html="error"/>
-
       <br>
-      <!-- <router-link :to="{name: 'HelloWorld'}">
-        <button @click="login"> Login </button>
-      </router-link> -->
       <button @click="login"> Login </button>
-
       <router-link :to="{name: 'HelloWorld'}">
         <button> Cancel </button>
       </router-link>
@@ -23,14 +15,14 @@
 
 <script>
 import AuthenticationService from '../services/AuthenticationService'
-// import addUser from '../api/addUserToDatabase'
 
 export default {
   data () {
     return {
       email: '',
       password: '',
-      error: null
+      error: null,
+      canLoginIn: false
     }
   },
   methods: {
@@ -41,10 +33,25 @@ export default {
           password: this.password
         })
 
-        console.log(response.data)
+        console.log('res', response)
+
+        if (response.data.error) {
+          alert('User does not exist.')
+          return false
+        }
+
+        this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'contacts'
+        })
+
+        console.log('ressy', response.data)
       } catch (error) {
         this.error = error.response.data.error
       }
+    },
+    loginCheck () {
+      this.canLoginIn = true
     }
   }
 }
