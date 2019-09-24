@@ -26,11 +26,11 @@ var knex = require('knex')({
 // we use this to get all contacts that belong to a certain user (based on user_id)
 // GET request that retrives all contacts from database
 // TODO: implement retrieving based on a specific user_id
-app.get('/contacts', (req, res) => {
-  knex.select().from('contacts').where({ user_id: 2 }).then(function (contact) {
-    res.send(contact)
-  })
-})
+// app.get('/contacts', (req, res) => {
+//   knex.select().from('contacts').where({ user_id: 2 }).then(function (contact) {
+//     res.send(contact)
+//   })
+// })
 
 require('./routes')(app, knex)
 // POST request that adds a user to the database everytime the
