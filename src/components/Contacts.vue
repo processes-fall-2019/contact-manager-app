@@ -1,11 +1,15 @@
 <template>
   <div>
     <h1> My Contacts </h1>
+    <button @click="logout"> Logout </button>
+    <br>
     <br>
     <button> Add </button>
     <button> Delete </button>
-    <input type="search" name="search" v-model="search" placeholder="search..."/>
+    &nbsp; &nbsp;
+    <input type="search" name="searchRes" v-model="searchRes" placeholder="search..."/>
     <button> Search </button>
+    <!-- TOdo: make delete and add buttons dynamic. (one delete button per contact) (an add button soemwhere) -->
     <br>
   </div>
 </template>
@@ -18,12 +22,18 @@ export default {
       password: '',
       error: null,
       canLoginIn: false,
-      search: '',
+      searchRes: '',
       contacts: ['franco', 'yo']
     }
   },
   methods: {
     search () {
+    },
+    logout () {
+      this.$store.dispatch('setUser', null)
+      this.$router.push({
+        name: 'HelloWorld'
+      })
     }
   }
 }
