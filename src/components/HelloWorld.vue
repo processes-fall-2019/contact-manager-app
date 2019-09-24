@@ -11,7 +11,6 @@
     <router-link :to="{name: 'login'}">
       <button v-if="enabled" class = "buttons"> Login </button>
     </router-link>
-    
     <router-link :to="{name: 'register'}">
       <button v-if="enabled" class = "buttons"> Register </button>
     </router-link>
@@ -19,7 +18,6 @@
   <br><br><br><br><br>
   </body>
 </div>
-  
 </template>
 
 <script>
