@@ -21,7 +21,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Easy-Contacts',
+      msg: 'Welcome to Easy Contacts',
       enabled: true,
       error: null
     }
