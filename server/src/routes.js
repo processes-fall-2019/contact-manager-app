@@ -42,4 +42,7 @@ module.exports = (app, knex) => {
       user: user
     })
   })
+
+  app.get('/contacts', async (req, res) => {
+  })
 }
