@@ -6,7 +6,7 @@
     <br><br><br><br><br>
     <h1 v-if="enabled">{{ msg }}</h1>
     <h2> We got the easiest contacts in town, <small><i><u>guaranteed</u></i></small> </h2>
-    <br>
+    <br><br><br><br><br>
 
     <router-link :to="{name: 'login'}">
       <button v-if="enabled" class = "buttons"> Login </button>
@@ -44,11 +44,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-height: 100%;
-width: 70%;
+height: 600px;
+width: 60%;
+border-radius: 30%;
 margin: auto;
 background-image: url('~@/assets/green-triangle-3.png');
-border-radius: 30%;
+
 }
 .buttons{
 font-weight: normal;
@@ -56,11 +57,11 @@ font-weight: normal;
   border-radius: 50%;
   border: none;
   color: white;
-  padding: 20px;
+  padding: 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 26px;
 }
 
 h1 {
