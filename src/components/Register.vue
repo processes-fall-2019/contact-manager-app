@@ -2,7 +2,8 @@
   <div class = "container">
       <br><br><br><br><br><br>
       <h1> Register </h1>
-      
+      <div class = "dog">
+      </div>
       <h2> It's so easy a dog could do it! </h2>
       <br>
       <input type="email" name="email" v-model="email" placeholder="email"/>
@@ -14,7 +15,7 @@
 
       <br>
       <router-link :to="{name: 'HelloWorld'}">
-        <button class = "buttons"@click="register"> Register </button>
+        <button class = "buttons" @click="register"> Register </button>
       </router-link>
 
       <router-link :to="{name: 'HelloWorld'}">
@@ -66,7 +67,6 @@ margin: auto;
 background-image: url('~@/assets/green-triangle-3.png');
 
 }
-  
 h1 {
   font-weight: normal;
   font-size: 60px;
