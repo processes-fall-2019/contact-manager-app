@@ -1,4 +1,5 @@
 <template>
+  <v-parallax height= "1000" dark src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
   <div>
       <h1> Login </h1>
       <input type="email" name="email" v-model="email" placeholder="email"/>
@@ -11,6 +12,7 @@
         <button> Cancel </button>
       </router-link>
   </div>
+  </v-parallax>
 </template>
 
 <script>
