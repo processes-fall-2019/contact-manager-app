@@ -3,7 +3,7 @@
       <v-flex>
         <div class="fullScreen">
           <v-toolbar flat dense class="black" dark>
-            <v-toolbar-title class="center">Register</v-toolbar-title>
+            <v-toolbar-title class="center">Sign-Up</v-toolbar-title>
           </v-toolbar>
                <v-row align="center" justify="center">
                 <div class="center"> 
@@ -33,10 +33,10 @@
             <div class="error" v-html="error"/>
             <br>
             <router-link :to="{name: 'HelloWorld'}">
-              <v-btn class="cyan" @click="register"> Register </v-btn>
+              <v-btn dark class="cyan" @click="register"> Register </v-btn>
             </router-link>
             <router-link :to="{name: 'HelloWorld'}">
-              <v-btn class="cyan"> Cancel </v-btn>
+              <v-btn dark class="cyan"> Cancel </v-btn>
             </router-link>
         </div>
       </v-flex>
