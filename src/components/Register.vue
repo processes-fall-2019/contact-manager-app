@@ -3,7 +3,7 @@
       <v-flex>
         <div class="fullScreen">
           <v-toolbar flat dense class="black" dark>
-            <v-toolbar-title class="center">Sign-Up</v-toolbar-title>
+            <v-toolbar-title class="center">Registration</v-toolbar-title>
           </v-toolbar>
                <v-row align="center" justify="center">
                 <div class="center"> 

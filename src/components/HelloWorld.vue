@@ -1,19 +1,35 @@
 <template>
-  <div class="hello">
-    <h1 v-if="enabled">{{ msg }}</h1>
-
-    <br>
-    <br>
-
-    <router-link :to="{name: 'login'}">
-      <button v-if="enabled"> Login </button>
-    </router-link>
-
-    <router-link :to="{name: 'register'}">
-      <button v-if="enabled"> Register </button>
-    </router-link>
-
-  </div>
+  <v-parallax height= "1000" dark src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+      <v-flex>
+        <div class="fullScreen">
+          <v-toolbar flat dense class="black" dark>
+            <v-toolbar-title class="center">Welcome to Easy Contacts</v-toolbar-title>
+          </v-toolbar>
+            <v-row align="center" justify="center">
+            </v-row>
+            
+          <v-row align="center" justify="center">
+            <v-img
+              src="./assets/phone.png"
+              aspect-ratio="1"
+              class="grey lighten-2"
+              max-width="500"
+              max-height="300"
+            ></v-img>
+          </v-row>
+            
+            <br><br><br><br><br><br><br><br>
+            <div class="error" v-html="error"/>
+            <br>
+            <router-link :to="{name: 'login'}">
+              <v-btn dark class="cyan" @click = "login"> Login </v-btn>
+            </router-link>
+            <router-link :to="{name: 'register'}">
+              <v-btn dark class="cyan" @click="register"> Register </v-btn>
+            </router-link>
+        </div>
+      </v-flex>
+  </v-parallax>
 </template>
 
 <script>
@@ -53,4 +69,10 @@ li {
 a {
   color: #42b983;
 }
+  .center {
+    margin:  auto;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
 </style>
