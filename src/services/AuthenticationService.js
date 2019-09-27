@@ -6,10 +6,8 @@ export default {
   },
   login (credentials) {
     return Api().post('login', credentials)
+  },
+  contacts (credentials) {
+    return Api().get('contacts', credentials)
   }
-  // contacts (credentials) {
-  //   return Api().post('contacts', credentials)
-  // }
 }
-
-// was npm run dev in pck.json
