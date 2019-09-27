@@ -23,6 +23,9 @@ export default {
   },
 
   methods: {
+    getContact () {
+      let count = 0
+    }
   }
 }
 
