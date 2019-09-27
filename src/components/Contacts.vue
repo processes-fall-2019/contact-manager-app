@@ -1,14 +1,12 @@
 <template>
   <div>
-    <h1> My Contacts </h1>
+    <h1>  {{ email }}'s Contacts </h1>
     <button @click="logout"> Logout </button>
     <br>
     <br>
     <input type="search" name="searchRes" v-model="searchRes" placeholder="search..."/>
     <button> Search </button>
-    <!-- TOdo: make delete and add buttons dynamic. (one delete button per contact) (an add button soemwhere) -->
     <!-- TOdo: make a way to edit contacts -->
-    <!-- TODo: make contact its own component, then also create a contact list component -->
     <br>
     <br>
     <div>
@@ -29,7 +27,7 @@ export default {
   },
   data () {
     return {
-      email: '',
+      email: this.$store.state.user[0].email,
       userId: this.$store.state.user[0].id,
       password: '',
       error: null,
