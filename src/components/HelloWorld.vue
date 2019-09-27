@@ -7,7 +7,7 @@
           </v-toolbar>
             <v-row align="center" justify="center">
             </v-row>
-            
+
           <v-row align="center" justify="center">
             <v-img
               src="./assets/phone.png"
@@ -17,15 +17,15 @@
               max-height="300"
             ></v-img>
           </v-row>
-            
+
             <br><br><br><br><br><br><br><br>
             <div class="error" v-html="error"/>
             <br>
             <router-link :to="{name: 'login'}">
-              <v-btn dark class="cyan" @click = "login"> Login </v-btn>
+              <v-btn dark class="cyan"> Login </v-btn>
             </router-link>
             <router-link :to="{name: 'register'}">
-              <v-btn dark class="cyan" @click="register"> Register </v-btn>
+              <v-btn dark class="cyan"> Register </v-btn>
             </router-link>
         </div>
       </v-flex>
