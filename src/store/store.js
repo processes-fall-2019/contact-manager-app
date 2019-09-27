@@ -7,6 +7,7 @@ export default new Vuex.Store({
   strict: true,
   state: {
     user: null,
+    contacts: null,
     isUserLoggedIn: false
   },
   mutations: {
@@ -20,11 +21,25 @@ export default new Vuex.Store({
       } else {
         state.isUserLoggedIn = false
       }
+    },
+    setContacts (state, contacts) {
+      state.contacts = contacts
+      console.log('contacts', contacts)
+      // console.log(state.isUserLoggedIn)
+
+      // if (contacts) {
+      //   state.isUserLoggedIn = true
+      // } else {
+      //   state.isUserLoggedIn = false
+      // }
     }
   },
   actions: {
     setUser ({ commit }, user) {
       commit('setUser', user)
+    },
+    setContacts ({ commit }, contacts) {
+      commit('setContacts', contacts)
     }
   }
 })
