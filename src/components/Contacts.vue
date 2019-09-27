@@ -4,12 +4,6 @@
     <button @click="logout"> Logout </button>
     <br>
     <br>
-    <button> Add </button>
-    <button> Delete </button>
-    <br>
-    <br>
-    <button @click="getContacts"> List Contacts </button>
-    &nbsp; &nbsp;
     <input type="search" name="searchRes" v-model="searchRes" placeholder="search..."/>
     <button> Search </button>
     <!-- TOdo: make delete and add buttons dynamic. (one delete button per contact) (an add button soemwhere) -->
@@ -18,18 +12,7 @@
     <br>
     <br>
     <div>
-      <h3>List</h3>
-
-      <!-- <ul>
-        <li v-for="contact in contacts">
-          {{ contact }}
-        </li>
-      </ul> -->
-      <div v-for="contact in contacts">
-        <li>
-          {{ contact }}
-        </li>
-      </div>
+      <ContactList> </ContactList>
     </div>
   </div>
 </template>
@@ -37,10 +20,12 @@
 <script>
 import AuthenticationService from '../services/AuthenticationService'
 import ContactList from './ContactList'
+import Contact from './Contact'
 
 export default {
   components: {
-    ContactList
+    ContactList,
+    Contact
   },
   data () {
     return {
@@ -67,9 +52,8 @@ export default {
       // console.log(this.$store.state.user[0].id) // use to somehow get user id
     },
     async getContacts () {
-
-      console.log("hi");
-      console.log(this.userId);
+      console.log('hi')
+      console.log(this.userId)
       try {
         const response = await AuthenticationService.contacts({
           user_id: this.userId
@@ -83,6 +67,8 @@ export default {
         console.log(conts)
 
         this.contacts = conts
+        this.$store.dispatch('setContacts', conts)
+        console.log('here', this.$store.state)
 
         console.log('contacts', this.contacts)
         return response
