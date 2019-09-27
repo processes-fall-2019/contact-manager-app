@@ -29,7 +29,6 @@
         <li>
           {{ contact }}
         </li>
-        </li>
       </div>
     </div>
   </div>
@@ -68,16 +67,20 @@ export default {
       // console.log(this.$store.state.user[0].id) // use to somehow get user id
     },
     async getContacts () {
+
+      console.log("hi");
+      console.log(this.userId);
       try {
         const response = await AuthenticationService.contacts({
           user_id: this.userId
         })
 
-        console.log('the ressy', response)
+        // console.log('the ressy', response)
         console.log('the res', response.data)
         console.log('the res 2', this.userId)
-
+        //
         let conts = response.data.filter(x => x.email)
+        console.log(conts)
 
         this.contacts = conts
 
