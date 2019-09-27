@@ -6,7 +6,7 @@
             <v-toolbar-title class="center">Login</v-toolbar-title>
           </v-toolbar>
           <v-row align="center" justify="center">
-            <div class="center"> 
+            <div class="center">
               <v-col>
                 <v-text-field
                   label="email"
@@ -19,9 +19,9 @@
               </v-col>
 
               <v-col>
-                <v-text-field label="password" 
-                  filled 
-                  type="password" 
+                <v-text-field label="password"
+                  filled
+                  type="password"
                   name="password"
                   v-model="password"
                   placeholder="">
