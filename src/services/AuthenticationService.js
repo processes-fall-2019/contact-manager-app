@@ -9,5 +9,8 @@ export default {
   },
   contacts (credentials) {
     return Api().get('contacts', credentials)
+  },
+  addContact (credentials) {
+    return Api().post('add-contact', credentials)
   }
 }
