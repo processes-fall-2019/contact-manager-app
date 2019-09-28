@@ -10,6 +10,7 @@
     <br>
     <br>
     <div>
+      <!-- <ContactList v-bind:contacts="contacts"> </ContactList> -->
       <ContactList> </ContactList>
     </div>
   </div>
