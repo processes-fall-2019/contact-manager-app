@@ -75,7 +75,7 @@ export default
           email: this.email
         })
 
-        console.log('the ressy', response.data)
+        console.log('the resssssy', response.data)
         // console.log('the res', response.data)
         // console.log('the res 2', this.userId)
         // //
@@ -87,11 +87,10 @@ export default
 
         // this.$store.dispatch('setContacts', this.contacts)
         this.holder = { id: 1 }
-        
-        // this.$forceUpdate()
+
         // console.log('here', this.$store.state.contacts)
-        //
         // console.log('contacts', this.contacts)
+        Object.assign(this.$data, this.$options.data.call(this))
         return response
       } catch (error) {
         this.error = error.response.data.error
@@ -102,6 +101,9 @@ export default
     }
   },
   computed: {
+    force () {
+      return this.$forceUpdate()
+    }
   }
 }
 
