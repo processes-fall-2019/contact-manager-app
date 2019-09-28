@@ -34,5 +34,7 @@ var knex = require('knex')({
 
 require('./routes')(app, knex)
 
-app.listen(config.port)
+// app.listen(config.port)
+app.listen(process.env.PORT || 3000)
+
 console.log(`Server started on port: 8081`)
