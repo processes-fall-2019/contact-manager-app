@@ -43,7 +43,6 @@
 
 <script>
 import AuthenticationService from '../services/AuthenticationService'
-
 export default {
   data () {
     return {
@@ -55,24 +54,22 @@ export default {
   },
   methods: {
     async login () {
+      console.log('hi')
       try {
         const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
-
         console.log('res', response)
-
         if (response.data.error) {
           alert('User does not exist.')
           return false
         }
-
         this.$store.dispatch('setUser', response.data.user)
+        console.log('herrreee', this.$store.state.user[0].id)
         this.$router.push({
           name: 'contacts'
         })
-
         console.log('ressy', response.data)
       } catch (error) {
         this.error = error.response.data.error
@@ -90,7 +87,6 @@ export default {
   .error {
     color: red;
   }
-
   .center {
     margin:  auto;
     align-items: center;
