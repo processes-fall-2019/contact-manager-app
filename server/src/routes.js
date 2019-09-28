@@ -81,6 +81,11 @@ module.exports = (app, knex) => {
           error: 'Error when adding contact to database.'
         })
       })
+
+    // res.send({
+    //   message: `contact created!`,
+    //   contact: contact
+    // })
   })
 
   // app.delete('/delete-contact', async (req, res) => {
