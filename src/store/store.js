@@ -25,13 +25,6 @@ export default new Vuex.Store({
     setContacts (state, contacts) {
       state.contacts = contacts
       console.log('contacts', contacts)
-      // console.log(state.isUserLoggedIn)
-
-      // if (contacts) {
-      //   state.isUserLoggedIn = true
-      // } else {
-      //   state.isUserLoggedIn = false
-      // }
     }
   },
   actions: {
