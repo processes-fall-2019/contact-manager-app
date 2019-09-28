@@ -1,13 +1,20 @@
 <template>
   <div>
-    <h1>contact</h1>
     <div v-for="contact in contacts" v-bind:key="contact.id">
-       <li>
-         {{ contact.first_name }}
-       </li>
+      <h2>contact card</h2>
+       <ul>
+         First Name: {{ contact.first_name }}&nbsp;&nbsp;&nbsp;
+         Last Name: {{ contact.last_name }}
+         <br/>
+         Phone Number: {{ contact.phone_number }}&nbsp;&nbsp;&nbsp;
+         Email: {{ contact.email }}
+       </ul>
+       <br>
+       <button> Edit </button>
+       <button> Delete </button>
+       <br>
+       <br>
     </div>
-    <button> Add </button>
-    <button> Delete </button>
   </div>
 </template>
 
@@ -18,13 +25,23 @@ export default {
 
   data () {
     return {
-      contacts: this.$store.state.contacts
+      contacts: this.$store.state.contacts,
+      first_name: '',
+      last_name: '',
+      phone_number: '',
+      email: '',
+      i: 0
     }
   },
-
+  // mounted: {
+  // },
   methods: {
     getContact () {
-      let count = 0
+    }
+  },
+  computed: {
+    set (i) {
+      return i++
     }
   }
 }
