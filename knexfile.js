@@ -36,7 +36,7 @@ module.exports = {
       connection: 'postgres://ethoesmmnzcunu:901dc9decc44710ccf9b2a38b3c8562efb358f46ddb9ada48aa0492da190dc8c@ec2-54-235-180-123.compute-1.amazonaws.com:5432/dde8k4u6i7hq2m',
       pool: {
         min: 2,
-        max: 10
+        max: 11
       },
       migrations: {
         tableName: 'knex_migrations'
