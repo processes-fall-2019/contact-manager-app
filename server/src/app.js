@@ -11,33 +11,33 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-// // establish connection with database using Knex ORM
-// var knex = require('knex')({
-//   client: 'pg',
-//   connection: {
-//     host: '127.0.0.1',
-//     port: '5437',
-//     user: 'postgres',
-//     password: '',
-//     database: 'contact-manager-database'
-//   }
-// })
-
-// for production database
+// establish connection with database using Knex ORM
 var knex = require('knex')({
   client: 'pg',
-  connection: 'postgres://ethoesmmnzcunu:901dc9decc44710ccf9b2a38b3c8562efb358f46ddb9ada48aa0492da190dc8c@ec2-54-235-180-123.compute-1.amazonaws.com:5432/dde8k4u6i7hq2m',
-  migrations: {
-    tableName: 'knex_migrations'
-  },
-  ssl: true
+  connection: {
+    host: '127.0.0.1',
+    port: '5437',
+    user: 'postgres',
+    password: '',
+    database: 'contact-manager-database'
+  }
 })
+
+// // for production database
+// var knex = require('knex')({
+//   client: 'pg',
+//   connection: 'postgres://ethoesmmnzcunu:901dc9decc44710ccf9b2a38b3c8562efb358f46ddb9ada48aa0492da190dc8c@ec2-54-235-180-123.compute-1.amazonaws.com:5432/dde8k4u6i7hq2m',
+//   migrations: {
+//     tableName: 'knex_migrations'
+//   },
+//   ssl: true
+// })
 
 // app.get('/', function (req, res) {
 //   res.redirect('/HelloWorld')
 // })
 
-app.use('/', express.static(path.join(__dirname, '/client/build')))
+// app.use('/', express.static(path.join(__dirname, '/client/build')))
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, '/HelloWorld'))
 // })
