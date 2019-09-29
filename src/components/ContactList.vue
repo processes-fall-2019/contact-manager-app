@@ -91,6 +91,7 @@ export default
         // console.log('here', this.$store.state.contacts)
         // console.log('contacts', this.contacts)
         Object.assign(this.$data, this.$options.data.call(this))
+        this.getContacts()
         return response
       } catch (error) {
         this.error = error.response.data.error

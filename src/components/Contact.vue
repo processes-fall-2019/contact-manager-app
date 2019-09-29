@@ -11,7 +11,7 @@
        </ul>
        <br>
        <button> Edit </button>
-       <button> Delete </button>
+       <button @click="deleteContact"> Delete </button>
        <br>
        <br>
     </div>
@@ -37,6 +37,10 @@ export default {
   // },
   methods: {
     getContact () {
+    },
+    deleteContact () {
+      this.contacts.pop()
+      // Object.assign(this.$data, this.$options.data.call(this))
     }
   },
   computed: {

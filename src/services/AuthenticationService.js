@@ -12,5 +12,8 @@ export default {
   },
   addContact (credentials) {
     return Api().post('add-contact', credentials)
+  },
+  deleteContact (credentials) {
+    return Api().delete('delete-contact', credentials)
   }
 }

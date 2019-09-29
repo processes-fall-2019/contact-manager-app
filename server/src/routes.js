@@ -90,21 +90,16 @@ module.exports = (app, knex) => {
 
   // app.delete('/delete-contact', async (req, res) => {
   //   const contact = await knex('contacts')
-  //     .insert({
-  //       user_id: userId,
-  //       first_name: req.body.first_name,
-  //       last_name: req.body.last_name,
-  //       phone_number: req.body.phone_number,
-  //       email: req.body.email
-  //     })
+  //     .where({ user_id: userId, email:  })
+  //     .del()
   //     .then(function (contact) {
   //       res.send({
-  //         message: `contact created!`
+  //         message: `contact deleted!`
   //       })
   //     })
   //     .catch(e => {
   //       res.send({
-  //         error: 'Error when adding contact to database.'
+  //         error: 'Error when deleting contact from database.'
   //       })
   //     })
   // })
