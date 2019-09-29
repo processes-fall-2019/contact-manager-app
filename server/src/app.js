@@ -5,6 +5,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
 const config = require('./config/config')
+var path = require('path')
 
 app.use(morgan('combined'))
 app.use(bodyParser.json())
