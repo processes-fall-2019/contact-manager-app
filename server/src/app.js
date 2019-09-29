@@ -12,7 +12,7 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-// // establish connection with database using Knex ORM
+// establish connection with database using Knex ORM
 // var knex = require('knex')({
 //   client: 'pg',
 //   connection: {
@@ -58,6 +58,7 @@ var knex = require('knex')({
 
 // app.use(express.static(path.join(__dirname, 'client', 'build')))
 
+app.use(serveStatic(__dirname + "/dist"))
 
 require('./routes')(app, knex)
 
