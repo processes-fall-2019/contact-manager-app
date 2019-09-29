@@ -32,6 +32,8 @@ var knex = require('knex')({
   ssl: true
 })
 
+app.use('/', express.static(path.join(__dirname, '/client/build')))
+
 require('./routes')(app, knex)
 
 // app.listen(config.port)
