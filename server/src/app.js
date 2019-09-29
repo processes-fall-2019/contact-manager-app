@@ -8,6 +8,14 @@ const config = require('./config/config')
 var path = require('path')
 var serveStatic = require('serve-static')
 
+
+app.use(express.static(__dirname + 'dist')) // del
+
+app.get('/', function (req, res) {        // del
+  res.sendFile(__dirname + '/dist/index.html')
+})
+
+
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
