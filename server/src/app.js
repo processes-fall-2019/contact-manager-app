@@ -46,6 +46,9 @@ var knex = require('knex')({
 //   // res.sendFile(path.join(__dirname, '../../src/main.js'))
 //   res.render('../../src/components/HelloWorld.vue')
 // })
+app.get('/', function (req, res) {
+  require('./routes')(app, knex)
+})
 
 
 
