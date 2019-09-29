@@ -51,7 +51,7 @@ var knex = require('knex')({
 // })
 // app.get('/', function (req, res) {
 // })
-app.use('/', require('./routes')(app, knex))
+app.use('/HelloWorld', require('./routes')(app, knex))
 
 
 // require('./routes')(app, knex)    revverttttt
