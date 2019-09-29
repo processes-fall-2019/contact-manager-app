@@ -43,7 +43,8 @@ var knex = require('knex')({
 // })
 // app.use(express.static(path.join(__dirname, 'client', 'build')))
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../../src/main.js'))
+  // res.sendFile(path.join(__dirname, '../../src/main.js'))
+  res.redirect('../../src/components/HelloWorld.vue')
 })
 
 
