@@ -42,10 +42,10 @@ var knex = require('knex')({
 //   res.sendFile(path.join(__dirname, '/HelloWorld'))
 // })
 // app.use(express.static(path.join(__dirname, 'client', 'build')))
-app.get('/', function (req, res) {
-  // res.sendFile(path.join(__dirname, '../../src/main.js'))
-  res.render('../../src/components/HelloWorld.vue')
-})
+// app.get('/', function (req, res) {
+//   // res.sendFile(path.join(__dirname, '../../src/main.js'))
+//   res.render('../../src/components/HelloWorld.vue')
+// })
 
 
 
