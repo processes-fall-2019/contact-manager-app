@@ -34,8 +34,12 @@ var knex = require('knex')({
 })
 
 // app.use('/', express.static(path.join(__dirname, '/client/build')))
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/HelloWorld'))
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '/HelloWorld'))
+// })
+app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'main.js'))
 })
 
 
