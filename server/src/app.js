@@ -5,7 +5,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
 const config = require('./config/config')
-var path = require('path')
+// var path = require('path')
 
 app.use(morgan('combined'))
 app.use(bodyParser.json())
@@ -41,15 +41,15 @@ var knex = require('knex')({
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, '/HelloWorld'))
 // })
-app.use(express.static(path.join(__dirname, 'client', 'build')))
+// app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 
 
 require('./routes')(app, knex)
 
-app.get('*', (req, res) => {
-  res.redirect('/HelloWorld')
-})
+// app.get('*', (req, res) => {
+//   res.redirect('/HelloWorld')
+// })
 
 // app.listen(config.port)
 app.listen(process.env.PORT || 8081)
