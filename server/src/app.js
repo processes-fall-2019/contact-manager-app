@@ -51,14 +51,12 @@ var knex = require('knex')({
 // })
 // app.get('/', function (req, res) {
 // })
-require('./routes')(app, knex)
 
 app.get('/', function (req, res) {
   res.redirect('./routes/HelloWorld')
 })
 
-
-// require('./routes')(app, knex)  // redoooooo
+require('./routes')(app, knex)
 
 // app.get('*', (req, res) => {
 //   res.redirect('/HelloWorld')
