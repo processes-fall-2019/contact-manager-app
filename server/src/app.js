@@ -5,7 +5,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
 const config = require('./config/config')
-// var path = require("path")
+var path = require('path')
 
 app.use(morgan('combined'))
 app.use(bodyParser.json())
@@ -35,7 +35,7 @@ var knex = require('knex')({
 
 // app.use('/', express.static(path.join(__dirname, '/client/build')))
 app.get('/', function (req, res) {
-  res.redirect('/HelloWorld')
+  res.sendFile(path.join(__dirname, '/HelloWorld'))
 })
 
 
