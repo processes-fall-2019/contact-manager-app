@@ -42,12 +42,14 @@ var knex = require('knex')({
 //   res.sendFile(path.join(__dirname, '/HelloWorld'))
 // })
 app.use(express.static(path.join(__dirname, 'client', 'build')))
-app.get('*', (req, res) => {
-  res.redirect('/HelloWorld')
-})
+
 
 
 require('./routes')(app, knex)
+
+app.get('*', (req, res) => {
+  res.redirect('/HelloWorld')
+})
 
 // app.listen(config.port)
 app.listen(process.env.PORT || 8081)
