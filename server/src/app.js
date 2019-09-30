@@ -63,13 +63,13 @@ var knex = require('knex')({
 //   res.send('gotten')
 // })
 
-app.use(express.static('client/build')) // del
+app.use(express.static(__dirname + 'client/build')) // del
 // app.get('/', function (req, res) {        // del
 //   res.sendFile(__dirname + '/dist/index.html')
 // })
-app.get('*', function (req, res) {        // del
+app.get('/', function (req, res) {        // del
   // res.sendFile(path.join(__dirname + '/dist/index.html'))
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
+  res.sendFile(path.join(__dirname, 'client/build', '/dist/index.html'))
 })
 
 require('./routes')(app, knex)
