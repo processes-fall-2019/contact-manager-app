@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
+const port = process.env.PORT || 8080 // 8081
 const config = require('./config/config')
 var path = require('path')
 var serveStatic = require('serve-static')
@@ -63,13 +64,18 @@ var knex = require('knex')({
 //   res.send('gotten')
 // })
 
-app.use(express.static(__dirname + 'client/build')) // del
 // app.get('/', function (req, res) {        // del
 //   res.sendFile(__dirname + '/dist/index.html')
 // })
+// app.use(express.static(__dirname + 'client/build')) // del
+// app.get('/', function (req, res) {        // del
+//   // res.sendFile(path.join(__dirname + '/dist/index.html'))
+//   res.sendFile(path.join(__dirname, 'client/build', '/dist/index.html'))
+// })
+app.use(express.static(__dirname + './dist/build')) // del
 app.get('/', function (req, res) {        // del
   // res.sendFile(path.join(__dirname + '/dist/index.html'))
-  res.sendFile(path.join(__dirname, 'client/build', '/dist/index.html'))
+  res.sendFile(path.join(__dirname, './dist/index.html'))
 })
 
 require('./routes')(app, knex)
@@ -79,6 +85,6 @@ require('./routes')(app, knex)
 // })
 
 // app.listen(config.port)
-app.listen(process.env.PORT || 8081)
+app.listen(port)
 
 console.log(`Server started on port: 8081`)
