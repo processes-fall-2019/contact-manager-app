@@ -5,7 +5,7 @@
     <br>
     <br>
     <input type="search" name="searchRes" v-model="searchRes" placeholder="search..."/>
-    <button> Search </button>
+    <button @click="searchContacts"> Search </button>
     <!-- TOdo: make a way to edit contacts -->
     <br>
     <br>
@@ -38,7 +38,19 @@ export default {
     }
   },
   methods: {
-    searchContacts () {
+    async searchContacts () {
+      try {
+        const response = await AuthenticationService.searchContacts({
+          user_id: this.userId,
+          first_name: this.searchRes
+        })
+
+        console.log('ressy', response.data);
+
+        return response
+      } catch (error) {
+        this.error = error.response.data.error
+      }
     },
     logout () {
       this.$store.dispatch('setUser', null)

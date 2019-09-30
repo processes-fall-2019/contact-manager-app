@@ -108,6 +108,21 @@ module.exports = (app, knex) => {
   //     })
   // })
 
+  app.get('/search-contacts', async (req, res) => {
+    const {firstName} = req.body
+    const contacts = await knex.select().from('contacts')
+      .where({ user_id: userId, first_name: 'Alice' })
+      .then(function (contact) {
+        res.send(contact)
+      })
+      .catch(e => {
+        res.send({
+          message: req.body,
+          error: 'Error when fetching from database.'
+        })
+      })
+  })
+
   // app.put('/update-contact', async (req, res) => {
   //   const contact = await knex('contacts')
   //     .insert({

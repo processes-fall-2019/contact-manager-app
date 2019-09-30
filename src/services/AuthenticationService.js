@@ -15,5 +15,8 @@ export default {
   },
   deleteContact (credentials) {
     return Api().delete('delete-contact', credentials)
+  },
+  searchContacts (credentials) {
+    return Api().get('search-contacts', credentials)
   }
 }
