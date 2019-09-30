@@ -93,6 +93,7 @@
     "node": "8.16.0",
     "npm": "6.4.1"
   },
+  "proxy": "http://localhost:8081",
   "browserslist": [
     "> 1%",
     "last 2 versions",

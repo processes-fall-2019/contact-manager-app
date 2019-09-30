@@ -1,18 +1,50 @@
 <template>
   <div>
-    <button @click="getContacts"> List Contacts </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button @click="makeAdding"> Add Contact </button>
-    <br>
-    <br>
-    <input v-show="adding" name="first_name" v-model="first_name" placeholder="First name"/>
-    <input v-show="adding" name="last_name" v-model="last_name" placeholder="Last name"/>
-    <input v-show="adding" name="phone_number" v-model="phone_number" placeholder="Phone number"/>
-    <input v-show="adding" type="email" name="email" v-model="email" placeholder="email"/>
-    <button v-show="adding" @click="addContact"> done </button>&nbsp;&nbsp;
-    <button v-show="adding" @click="adding=false" > cancel </button>
+    <v-btn light class="cyan" @click="getContacts"> List Contacts </v-btn> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <v-btn light="" class="cyan" @click="makeAdding"> Add Contact </v-btn>
+    <br />
+    <br />
+    <v-text-field
+     v-show="adding"
+     filled
+     type="fname"
+     name="first_name"
+     v-model="first_name"
+     placeholder="First Name">
+    </v-text-field>
+
+    <v-text-field
+    v-show="adding"
+    filled
+    type="lname"
+    name="last_name"
+    v-model="last_name"
+    placeholder="Last Name">
+    </v-text-field>
+
+    <v-text-field
+    v-show="adding"
+    filled=""
+    type="pnum"
+    name="phone_number"
+    v-model="phone_number"
+    placeholder="Phone Number">
+    </v-text-field>
+
+    <v-text-field
+    v-show="adding"
+    filled=""
+    type="email"
+    name="email"
+    v-model="email"
+    placeholder="Email">
+    </v-text-field>
+
+    <v-btn light v-show ="adding" @click="addContact"> Done </v-btn>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <v-btn light v-show ="adding" @click="adding=false"> Cancel </v-btn>
+
     <br/>
     <br/>
-    <!-- <Contact v-for="contact in contacts" v-bind:key="contact.id" :contact-id.sync="contact.id"> </Contact> -->
     <Contact v-for="i in holder" v-bind:key="i.id" :i-id.sync="i.id"> </Contact>
   </div>
 </template>
@@ -111,5 +143,13 @@ export default
 </script>
 
 <style>
-
+  .error {
+    color: red;
+  }
+  .center {
+    margin:  auto;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
 </style>

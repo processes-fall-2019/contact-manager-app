@@ -1,19 +1,35 @@
 <template>
-  <div>
-    <h1>  {{ email }}'s Contacts </h1>
-    <button @click="logout"> Logout </button>
-    <br>
-    <br>
-    <input type="search" name="searchRes" v-model="searchRes" placeholder="search..."/>
-    <button @click="searchContacts"> Search </button>
-    <!-- TOdo: make a way to edit contacts -->
-    <br>
-    <br>
-    <div>
-      <!-- <ContactList v-bind:contacts="contacts"> </ContactList> -->
-      <ContactList> </ContactList>
-    </div>
-  </div>
+  <v-parallax height= "1000" dark src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+    <v-flex>
+      <div class="fullscreen">
+          <v-toolbar flat dense class="black" dark>
+            <v-toolbar-title class="center">{{ email }}'s Contacts</v-toolbar-title>
+            <v-btn dark @click="logout"> Logout </v-btn>
+          </v-toolbar>
+          <v-row align="center" justify="center">
+            <div class="center">
+              <v-col>
+                <v-text-field
+                  label=""
+                  filled
+                  type="search"
+                  name="searchRes"
+                  v-model="searchRes"
+                  placeholder="search...">
+                </v-text-field>
+                <v-btn dark="" class="cyan" @click="searchContacts"> Search </v-btn>
+                <br><br>
+                <br><br>
+                <ContactList> </ContactList>
+              </v-col>
+            </div>
+          </v-row>
+        <br>
+        <div class="error" v-html="error"/>
+        <br>
+      </div>
+    </v-flex>
+  </v-parallax>
 </template>
 
 <script>
@@ -45,7 +61,7 @@ export default {
           first_name: this.searchRes
         })
 
-        console.log('ressy', response.data);
+        console.log('ressy', response.data)
 
         return response
       } catch (error) {
@@ -93,18 +109,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .error {
+    color: red;
+  }
+  .center {
+    margin:  auto;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
 </style>

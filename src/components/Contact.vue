@@ -1,19 +1,17 @@
 <template>
   <div>
     <div v-for="contact in contacts" v-bind:key="contact.id">
-      <h2>contact card</h2>
-       <ul>
-         First Name: {{ contact.first_name }}&nbsp;&nbsp;&nbsp;
-         Last Name: {{ contact.last_name }}
-         <br/>
-         Phone Number: {{ contact.phone_number }}&nbsp;&nbsp;&nbsp;
-         Email: {{ contact.email }}
-       </ul>
-       <br>
-       <button> Edit </button>
-       <button @click="deleteContact"> Delete </button>
-       <br>
-       <br>
+      <div class="contactCard">
+        <br />
+        <h4>
+          First Name: {{ contact.first_name }} <br>
+          Last Name: {{ contact.last_name }} <br>
+          Phone Number: {{ contact.phone_number }} <br>
+          Email: {{ contact.email }} <br><br>
+        </h4>
+        <v-btn light="" @click="deleteContact"> Delete</v-btn>
+      </div>
+      <br />
     </div>
   </div>
 </template>
@@ -53,4 +51,13 @@ export default {
 </script>
 
 <style>
+  .contactCard{
+  border: 10px solid teal;
+  font-size: 20px;
+  border-radius: 25%;
+  margin:  auto;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  }
 </style>
