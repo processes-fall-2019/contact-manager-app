@@ -7,18 +7,17 @@
           </v-toolbar>
             <v-row align="center" justify="center">
             </v-row>
+            <br><br><br />
 
-          <v-row align="center" justify="center">
-            <v-img
-              src="./assets/phone.png"
-              aspect-ratio="1"
-              class="grey lighten-2"
-              max-width="500"
-              max-height="300"
-            ></v-img>
-          </v-row>
+            <v-row align="center" justify="center">
+              <v-col class="center" sm="2">
+                  <v-img
+                    src="https://masciadev.com/wp-content/uploads/2018/06/white-phone-icon.png"
+                  ></v-img>
+                </v-col>
+            </v-row>
 
-            <br><br><br><br><br><br><br><br>
+            <br><br><br />
             <div class="error" v-html="error"/>
             <br>
             <router-link :to="{name: 'login'}">

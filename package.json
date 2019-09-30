@@ -13,7 +13,6 @@
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js"
   },
-  "proxy": "http://localhost:8081",
   "dependencies": {
     "autoprefixer": "^7.1.2",
     "axios": "^0.19.0",

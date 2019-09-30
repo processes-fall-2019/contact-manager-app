@@ -9,6 +9,12 @@
           Phone Number: {{ contact.phone_number }} <br>
           Email: {{ contact.email }} <br><br>
         </h4>
+        <!-- <ul>
+          First Name: {{ contact.first_name }} <br>
+          Last Name: {{ contact.last_name }} <br>
+          Phone Number: {{ contact.phone_number }} <br>
+          Email: {{ contact.email }} <br><br>
+        </ul> -->
         <v-btn light="" @click="deleteContact"> Delete</v-btn>
       </div>
       <br />
