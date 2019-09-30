@@ -36,13 +36,13 @@ module.exports = (app, knex) => {
         })
       })
 
-    userId = user[0].id
-
     if (user.length === 0) {
       return res.send({
         error: 'User not found.'
       })
     }
+
+    userId = user[0].id
 
     res.send({
       message: `Hello ${req.body.email}, Welcome back.`,
