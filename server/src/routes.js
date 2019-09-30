@@ -3,9 +3,9 @@ const AuthenticationControllerPolicy = require('./policies/AuthenticationControl
 var userId
 
 module.exports = (app, knex) => {
-  app.get('/', function (req, res) {
-    res.redirect('/HelloWorld')
-  })
+  // app.get('/', function (req, res) {
+  //   res.redirect('/HelloWorld')
+  // })
 
   app.post('/register', AuthenticationControllerPolicy.register, async (req, res) => {
     (await knex('users')
